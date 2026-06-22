@@ -40,6 +40,8 @@
   "author": "Convalexa Solutions LLP (https://www.convalexa.in)",
   "license": "MIT",
   "homepage": "https://www.convalexa.in/tools/",
+  "repository": { "type": "git", "url": "git+https://github.com/Convalexa-Solutions-LLP/barcode-mcp.git" },
+  "bugs": { "url": "https://github.com/Convalexa-Solutions-LLP/barcode-mcp/issues" },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
     "@zxing/library": "^0.23.0",

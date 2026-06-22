@@ -1,0 +1,42 @@
+{
+  "name": "@convalexa/barcode-mcp",
+  "version": "0.1.0",
+  "description": "MCP server exposing Convalexa's barcode, QR and RFID/EPC tools to AI assistants (generate, bulk, encode EPC, decode).",
+  "type": "module",
+  "bin": {
+    "convalexa-barcode-mcp": "src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node test/smoke.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "barcode",
+    "qrcode",
+    "rfid",
+    "epc",
+    "sgtin",
+    "gs1",
+    "convalexa"
+  ],
+  "author": "Convalexa Solutions LLP (https://www.convalexa.in)",
+  "license": "MIT",
+  "homepage": "https://www.convalexa.in/tools/",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@zxing/library": "^0.23.0",
+    "bwip-js": "^4.11.1",
+    "jimp": "^1.6.1",
+    "zod": "^4.4.3"
+  }
+}

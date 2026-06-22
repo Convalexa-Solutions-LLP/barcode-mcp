@@ -16,7 +16,15 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "test": "node test/smoke.js"
+    "start:http": "node src/http.js",
+    "test": "node test/smoke.js",
+    "prepublishOnly": "node test/smoke.js"
+  },
+  "optionalDependencies": {
+    "express": "^5.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "mcp",

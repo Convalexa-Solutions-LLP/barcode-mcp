@@ -46,6 +46,25 @@ Built by [Convalexa Solutions LLP](https://www.convalexa.in) — Make-in-India U
 
 Claude Desktop config lives at: macOS `~/Library/Application Support/Claude/claude_desktop_config.json`, Windows `%APPDATA%\Claude\claude_desktop_config.json`. For Claude Code: `claude mcp add convalexa-barcode -- npx -y @convalexa/barcode-mcp`.
 
+## Remote hosting (optional)
+
+For a hosted connector (e.g. `https://mcp.convalexa.in/mcp`) usable without a local install, run the **Streamable HTTP** variant on a Node host. Your `.aspx`/IIS host can't run this — use a Node host (Railway, Fly.io, Render, or a small VPS).
+
+```bash
+npm install express          # express is an optional dependency
+PORT=8787 MCP_API_KEY=secret npm run start:http
+# endpoints: POST /mcp   GET /healthz
+```
+
+Or with Docker:
+
+```bash
+docker build -t convalexa-barcode-mcp .
+docker run -p 8787:8787 -e MCP_API_KEY=secret convalexa-barcode-mcp
+```
+
+Then point a subdomain (e.g. `mcp.convalexa.in`) at the host over HTTPS and add it as a custom MCP connector. `MCP_API_KEY` (optional) requires `Authorization: Bearer <key>`. The server runs stateless (a fresh MCP instance per request).
+
 ## Develop
 
 ```bash
